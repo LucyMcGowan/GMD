@@ -1,7 +1,8 @@
 Package: GMD
-Title: What the Package Does (one line, title case)
+Title: Google RMarkdown
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: c(person("Lucy", "D'Agostino McGowan", email = "ld.mcgowan@vanderbilt.edu", role = c("aut", "cre")),
+             person("Nick", "Strayer", email = "n.strayer@vanderbilt.edu", role = c("aut", "cre")),
 Description: What the package does (one paragraph).
 Depends:
     R (>= 3.3.2)
