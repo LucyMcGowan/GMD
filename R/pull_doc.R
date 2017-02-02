@@ -1,1 +1,13 @@
-#here is where we will have code to pull google docs
+
+#' Title
+#'
+#' @param url
+#' @param apikey
+#'
+#' @return
+#' @export
+#'
+#' @examples
+pull_doc <- function(url,apikey){
+
+}
