@@ -4,20 +4,24 @@
 \alias{render_doc}
 \title{Render Google Document as html or pdf}
 \usage{
-render_doc(doc, output_format = "html_document")
+render_doc(doc_fun, output_format = "html_document")
 }
 \arguments{
-\item{doc}{function to pull Google document obtained from `GMD()`}
+\item{doc_fun}{function to pull Google document obtained from `GMD()`}
 
 \item{output_format}{"html_document" or "pdf_document"}
 }
 \value{
-
+rendered pdf or html document
 }
 \description{
 Render Google Document as html or pdf
 }
 \examples{
-
+\dontrun{
+edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
+my_doc <- GMD(doc = edit_url, token)
+render_doc(doc_fun = my_doc(), output_format = "html_document")
+}
 }
 
