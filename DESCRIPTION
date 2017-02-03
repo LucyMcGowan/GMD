@@ -13,4 +13,6 @@ RoxygenNote: 5.0.1
 Imports: httr,
     purrr,
     rmarkdown,
-    tibble
+    tibble,
+    testthat
+Suggests: testthat
