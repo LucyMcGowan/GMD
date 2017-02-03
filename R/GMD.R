@@ -25,12 +25,18 @@ GMD <- function(doc, token){
 
   if (length(text_url) == 0) stop("The id you provided is not for a Google Text Document. Nothing to return.\n")
   filename = paste0(req$title,".Rmd")
+  # write(text, file = filename)
+
   #a function to return upon calling GMD. you can then use this function to download the doc
   #It can also be fed to other functions to continuously update or render in markdown.
-  get_doc <- function(){
-    text <- .get_docs(url = text_url, token)
-    write(text, file = filename)
-    cat("Saving ", filename)
-  }
+  get_doc <- function(printLoc = F){
+
+    if(printLoc){
+      return(filename)
+    } else {
+      text <- .get_docs(url = text_url, token)
+      write(text, file = filename)
+      cat("Saving ", filename)
+    }  }
   return(get_doc)
 }
