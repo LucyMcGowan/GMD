@@ -22,7 +22,7 @@ live_update <- function(document, refresh_rate = 1){
     position <- paste0(position, ".") #add another progress dot.
 
     flush.console()
-    cat(say(paste0("Watching for updates.", position), by = "monkey", type = "string"), " \r")
+    cat(cowsay::say(paste0("Watching for updates.", position), by = "monkey", type = "string"), " \r")
 
     #If we've been filling bar for a while reset it.
     if(nchar(position) > 10) position = "."
