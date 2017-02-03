@@ -18,3 +18,13 @@ drive_url <- "https://www.googleapis.com/drive/v2/files/"
   return(reqlist)
 }
 
+.get_id <- function(edit_url) {
+  url <- strsplit(gsub("//", "/", edit_url), "/")
+  if (length(url[[1]]) < 6)
+    stop("This url doesn't look like it comes from editing a Google Document")
+  if (url[[1]][2] == "docs.google.com" & url[[1]][6] == "edit") {
+    id <- url[[1]][5]
+    return(id)
+  } else
+    stop("This url doesn't look like it comes from editing a Google Document")
+}

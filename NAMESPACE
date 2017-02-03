@@ -2,4 +2,4 @@
 
 export(GMD)
 export(doc_tbl)
-export(get_id)
+export(live_update)
