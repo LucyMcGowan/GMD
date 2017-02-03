@@ -1,9 +1,9 @@
-api_url <- "https://www.googleapis.com/drive/v2/files/"
-auth <- gs_auth()
+token <- googlesheets::gs_auth()
 
-.api_fetch <- function(api_url, auth) {
+.api_fetch <- function(token = token) {
+  api_url <- "https://www.googleapis.com/drive/v2/files/"
   req <- httr::GET(url = api_url,
-                   auth)
+                   token)
 
   if (req$status_code >= 400) {
     stop(
