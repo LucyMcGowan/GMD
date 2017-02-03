@@ -3,7 +3,7 @@ Title: Google RMarkdown
 Version: 0.0.0.9000
 Authors@R: c(person("Lucy", "D'Agostino McGowan", email = "ld.mcgowan@vanderbilt.edu", role = c("aut","cre")),
              person("Nick", "Strayer", email = "n.strayer@vanderbilt.edu", role = c("aut")))
-Description: What the package does (one paragraph).
+Description: R package to save `.Rmd`-esque files written in Google Docs as `.Rmd` files on the user's computer and render them as a `.pdf` or `.html` document if the user chooses.
 Depends:
     R (>= 3.3.2)
 License: MIT + file LICENSE
