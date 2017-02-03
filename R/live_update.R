@@ -17,15 +17,19 @@ live_update <- function(document, refresh_rate = 1){
   pb <- txtProgressBar(max = 100)
 
   while(T){
+
     document() #download document
 
     position <- paste0(position, ".") #add another progress dot.
-
+    cat("\014")
+    cat(" \r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r", cowsay::say(paste0("Watching for updates.", position), by = "monkey", type = "string"))
     flush.console()
-    cat(cowsay::say(paste0("Watching for updates.", position), by = "monkey", type = "string"), " \r")
 
     #If we've been filling bar for a while reset it.
     if(nchar(position) > 10) position = "."
+
+    #wait.
+    Sys.sleep(refresh_rate)
   }
 
 }
