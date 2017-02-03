@@ -1,18 +1,15 @@
 #' Get the ids of Google Drive documents
 #'
-#' @param token your google authentication token
+#' @param edit_url the url you see when editing your Google Document
 #'
-#' @return tibble containing id, title, and date created of documents in google drive
-#' @export
+#' @return your document id, to be input in `GMD()`
+#'
 #'
 #' @examples
-get_id <- function(token){
-  req <- .api_fetch(token)
-  req_tbl <- tibble::tibble(
-    id             = purrr::map_chr(req$items, "id") ,
-    title          = purrr::map_chr(req$items, "title"),
-    dateCreated    = as.Date(purrr::map_chr(req$items, "createdDate"))
-  )
-  req_tbl <- req_tbl[order(req_tbl$dateCreated, decreasing = TRUE),]
-  return(req_tbl)
+#' edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
+#' id <- get_id(edit_url)
+#'
+#' @export
+get_id <- function(edit_url){
+  strsplit(gsub("//", "/", edit_url), "/")[[1]][5]
 }
