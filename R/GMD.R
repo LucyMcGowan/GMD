@@ -9,24 +9,36 @@
 #' @examples
 #' \dontrun{
 #' edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
-#' id <- get_id(edit_url)
-#' GMD(doc_id = id, token, render = 'none')
+#' GMD(doc_id = edit_url, token, render = 'none')
 #' }
 #' @export
 GMD <- function(doc_id, token, render = 'none'){
-  api_url <- paste0(drive_url, doc_id)
-  req <- .get_docs(url = api_url,
-                   token)
+
+  #Check if doc_id is a url
+  is_url = grepl("docs.google.com", doc_id)
+
+  #If the document id is supplied as a url strip away the stuff around the true ID
+  api_url <-  paste0(drive_url, ifelse(is_url, .get_id(doc_id), doc_id))
+
+  req <- .get_docs(url = api_url, token)
+
   text_url <- req$exportLinks$`text/plain`
+
   if (length(text_url) == 0) stop("The id you provided is not for a Google Text Document. Nothing to return.\n")
-  text <- .get_docs(url = text_url,
-                    token)
   filename = paste0(req$title,".Rmd")
-  write(text, file = filename)
-  if (render == 'pdf_document'){
-  rmarkdown::render(filename, "pdf_document")
+  # write(text, file = filename)
+  # if (render == 'pdf_document'){
+  # rmarkdown::render(filename, "pdf_document")
+  # }
+  # if (render == 'html_document'){
+  #   rmarkdown::render(filename, "html_document")
+  # }
+  #a function to return upon calling GMD. you can then use this function to download the doc
+  #It can also be fed to other functions to continuously update or render in markdown.
+  get_doc <- function(){
+    text <- .get_docs(url = text_url, token)
+    write(text, file = filename)
+    filename
   }
-  if (render == 'html_document'){
-    rmarkdown::render(filename, "html_document")
-  }
+  return(get_doc)
 }
