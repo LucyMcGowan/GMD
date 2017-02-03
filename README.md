@@ -28,3 +28,5 @@ edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFj
 id <- get_id(edit_url)
 GMD(doc_id = id, token, render = 'none')
 ```
+
+By default, this will add a `.Rmd` file to your current working directory. If you would like to change this location, you can use the `setwd()` command.

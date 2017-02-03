@@ -4,7 +4,7 @@
 #' @param token your google authentication token
 #' @param render 'none' is the default - this will create only a .Rmd file, and not render it. 'pdf_document' will render a pdf document and 'html_document' will render an html document.
 #'
-#' @return
+#' @return creates a `.Rmd` file in your working directory and, if specified, renders the document
 #'
 #' @examples
 #' \dontrun{
