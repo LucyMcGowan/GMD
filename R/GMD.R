@@ -29,7 +29,7 @@ GMD <- function(doc, token){
 
   #a function to return upon calling GMD. you can then use this function to download the doc
   #It can also be fed to other functions to continuously update or render in markdown.
-  get_doc <- function(printLoc = F){
+  get_doc <- function(printLoc = FALSE){
 
     if(printLoc){
       return(filename)
@@ -38,5 +38,6 @@ GMD <- function(doc, token){
       write(text, file = filename)
       cat("Saving ", filename)
     }  }
+  formals(get_doc) <- list(filename = filename, token = token, text_url = text_url)
   return(get_doc)
 }
