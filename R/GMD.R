@@ -2,6 +2,7 @@
 #'
 #' @param doc your google documents unique ID or edit URL. The unique ID can be obtained by using the `doc_tbl()` function and navigating to your document of interest. The edit URL is the Google Doc url you use to edit the document.
 #' @param token your google authentication token
+#' @param output_name the desire file name (sans extension). Defaults to google doc name.
 #'
 #' @return creates a `.Rmd` file in your working directory and, if specified, renders the document
 #'
@@ -11,7 +12,7 @@
 #' GMD(doc = edit_url, token)
 #' }
 #' @export
-GMD <- function(doc, token){
+GMD <- function(doc, token, output_name = NULL){
 
   #Check if doc is a url
   is_url = grepl("docs.google.com", doc)
@@ -24,8 +25,9 @@ GMD <- function(doc, token){
   text_url <- req$exportLinks$`text/plain`
 
   if (length(text_url) == 0) stop("The id you provided is not for a Google Text Document. Nothing to return.\n")
-  filename = paste0(req$title,".Rmd")
-  # write(text, file = filename)
+
+  #check if the user chose a filename or not. If they didn't default to the google docs name.
+  filename = ifelse(is.null(output_name), paste0(req$title,".Rmd"), paste0(output_name, ".Rmd"))
 
   #a function to return upon calling GMD. you can then use this function to download the doc
   #It can also be fed to other functions to continuously update or render in markdown.
