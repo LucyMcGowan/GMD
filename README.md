@@ -12,7 +12,7 @@ Create collaborative R Markdown files in Google Docs and render them in `R`.
 ## Install
 
 ```
-devtools::install_github("lucymcgowan/GMD")
+devtools::install_github("LFOD/GMD")
 ```
 
 ## Load GMD
