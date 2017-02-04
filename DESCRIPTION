@@ -16,4 +16,3 @@ Imports: httr,
     tibble,
     testthat,
     cowsay
-Suggests: testthat

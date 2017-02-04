@@ -13,7 +13,7 @@ drive_url <- "https://www.googleapis.com/drive/v2/files/"
   }
   httr::stop_for_status(req)
   reqlist <- httr::content(req, "parsed")
-  if (length(reqlist) == 0) stop("Zero records match your filter. Nothing to return.\n")
+  if (length(reqlist) == 0) stop("Zero records match your url.\n")
 
   return(reqlist)
 }

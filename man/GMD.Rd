@@ -4,14 +4,12 @@
 \alias{GMD}
 \title{Create an R Markdown document from a Google Document}
 \usage{
-GMD(doc_id, token, render = "none")
+GMD(doc, token)
 }
 \arguments{
-\item{doc_id}{your google documents unique ID - this can be obtained by using the `doc_tbl()` function and navigating to your document of interest or using your Google Document's editing url in the `get_id()` function}
+\item{doc}{your google documents unique ID or edit URL. The unique ID can be obtained by using the `doc_tbl()` function and navigating to your document of interest. The edit URL is the Google Doc url you use to edit the document.}
 
 \item{token}{your google authentication token}
-
-\item{render}{'none' is the default - this will create only a .Rmd file, and not render it. 'pdf_document' will render a pdf document and 'html_document' will render an html document.}
 }
 \value{
 creates a `.Rmd` file in your working directory and, if specified, renders the document
@@ -22,8 +20,7 @@ Create an R Markdown document from a Google Document
 \examples{
 \dontrun{
 edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
-id <- get_id(edit_url)
-GMD(doc_id = id, token, render = 'none')
+GMD(doc = edit_url, token)
 }
 }
 

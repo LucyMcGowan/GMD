@@ -7,14 +7,14 @@
 #'
 #' @examples
 #' \dontrun{
-#' my_doc <- GMD(token, url)
+#' edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
+#' my_doc <- GMD(doc = edit_url, token)
 #' live_update(my_doc)
 #' }
 #' @export
 live_update <- function(document, refresh_rate = 1){
 
   position <- "." #progress dots
-  pb <- txtProgressBar(max = 100)
 
   while(T){
 
@@ -23,7 +23,7 @@ live_update <- function(document, refresh_rate = 1){
     position <- paste0(position, ".") #add another progress dot.
     cat("\014")
     cat(" \r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r", cowsay::say(paste0("Watching for updates.", position), by = "monkey", type = "string"))
-    flush.console()
+    utils::flush.console()
 
     #If we've been filling bar for a while reset it.
     if(nchar(position) > 10) position = "."

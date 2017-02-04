@@ -3,3 +3,4 @@
 export(GMD)
 export(doc_tbl)
 export(live_update)
+export(render_doc)
