@@ -1,10 +1,10 @@
 [![Build Status](https://travis-ci.org/LFOD/GMD.svg?branch=master)](https://travis-ci.org/LFOD/GMD)
 
 
-**Authors:** [Lucy D'Agostino McGowan](www.lucymcgowan.com) & [Nick Strayer](www.nickstrayer.me)
 
-**License:** [MIT](https://opensource.org/licenses/MIT)
 # Google Markdown
+**Authors:** [Lucy D'Agostino McGowan](www.lucymcgowan.com) & [Nick Strayer](www.nickstrayer.me)  
+**License:** [MIT](https://opensource.org/licenses/MIT)
 
 Create collaborative R Markdown files in Google Docs and render them in `R`.
 
