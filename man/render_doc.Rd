@@ -4,10 +4,12 @@
 \alias{render_doc}
 \title{Render Google Document as html or pdf}
 \usage{
-render_doc(doc_fun, output_format = "html_document")
+render_doc(doc_fun, run_doc = TRUE, output_format = "html_document")
 }
 \arguments{
 \item{doc_fun}{function to pull Google document obtained from `GMD()`}
+
+\item{run_doc}{logical. If you have already run the document, can be set to `FALSE`. Default is TRUE.}
 
 \item{output_format}{"html_document" or "pdf_document"}
 }

@@ -30,3 +30,18 @@ my_doc()
 ```
 
 By default, this will add a `.Rmd` file to your current working directory. If you would like to change this location, you can use the `setwd()` command.
+
+### If you would like it to update continuously
+
+```
+live_update(my_doc)
+```
+
+### If you are into pipes
+
+```
+edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
+edit_url %>%
+ GMD(token) %>%
+ render_doc(type = "html_document")
+```
