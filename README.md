@@ -2,6 +2,7 @@
 
 
 **Authors:** [Lucy D'Agostino McGowan](www.lucymcgowan.com) & [Nick Strayer](www.nickstrayer.me)
+
 **License:** [MIT](https://opensource.org/licenses/MIT)
 # Google Markdown
 
