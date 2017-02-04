@@ -7,7 +7,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' my_doc <- GMD(token, url)
+#' edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
+#' my_doc <- GMD(doc = edit_url, token)
 #' live_update(my_doc)
 #' }
 #' @export
