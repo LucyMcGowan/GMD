@@ -50,5 +50,5 @@ live_update(my_doc)
 edit_url <- "https://docs.google.com/document/d/1RTCQ67mpZTKe9ddllVNCBom5uC2KMFjktKHb1mjWKOM/edit"
 edit_url %>%
  GMD(token) %>%
- render_doc(type = "html_document")
+ render_doc(output_format = "html_document")
 ```
