@@ -35,7 +35,11 @@ GMD <- function(doc, token){
       return(filename)
     } else {
       text <- .get_docs(url = text_url, token)
-      write(text, file = filename)
+      #remove the smart quotes so R doesnt freak out.
+      text_clean_1 <- gsub("“|”", "\"", text)
+      text_clean_2 <- gsub("‘|’", "'", text_clean_1)
+
+      write(text_clean_2, file = filename)
       cat("Saving ", filename)
     }  }
   formals(get_doc) <- list(printLoc = FALSE, filename = filename, token = token, text_url = text_url)
