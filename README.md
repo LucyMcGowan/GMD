@@ -3,7 +3,7 @@
 
 
 # Google Markdown
-**Authors:** [Lucy D'Agostino McGowan](www.lucymcgowan.com) & [Nick Strayer](www.nickstrayer.me)  
+**Authors:** [Nick Strayer](www.nickstrayer.me) & [Lucy D'Agostino McGowan](www.lucymcgowan.com) 
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
 Create collaborative R Markdown files in Google Docs and render them in `R`.
