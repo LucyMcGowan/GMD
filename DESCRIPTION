@@ -14,5 +14,5 @@ Imports: httr,
     purrr,
     rmarkdown,
     tibble,
-    testthat
-Suggests: testthat
+    testthat,
+    cowsay
